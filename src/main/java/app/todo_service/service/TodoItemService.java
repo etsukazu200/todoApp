@@ -49,6 +49,17 @@ public class TodoItemService {
     public List<TodoItem> listTodos() {
         return todoRepo.findAll();
     }
+
+    public List<TodoItem> listTodosfiltred(String filterBy) {
+          if(filterBy.equals("all")){
+              return listTodos();
+          }
+          else if(filterBy.equals("completed")) {
+             return  todoRepo.findByCompletedIsTrue();
+        } else {
+         return   todoRepo.findByCompletedIsFalse();
+    }
+}
 }
 
 

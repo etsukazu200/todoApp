@@ -39,4 +39,9 @@ public class TodoController {
     public List<TodoItem> listTodos(){
         return  todoService.listTodos();
     }
+    @GetMapping("filtred")
+    public List<TodoItem> listTodos(@RequestParam String filterBy){
+        return  todoService.listTodosfiltred(filterBy);
+    }
+
 }
