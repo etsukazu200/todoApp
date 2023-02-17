@@ -9,12 +9,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/todos")
+@CrossOrigin
 public class TodoController {
 
     @Autowired
     private TodoItemService todoService;
-
-
 
     @PostMapping("/add-Todo")
     public TodoItem createTodo(@RequestParam String title) {
